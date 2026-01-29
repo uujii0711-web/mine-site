@@ -1,20 +1,8 @@
 {
-  "name": "North Ramp – Ch45",
-  "inspections": [
-    {
-      "date": "2026-01-28",
-      "note": "Minor scaling observed",
-      "photos": [
-        "photos/2026-01-28/1.jpg",
-        "photos/2026-01-28/2.jpg"
-      ]
-    },
-    {
-      "date": "2026-01-29",
-      "note": "Support checked, OK",
-      "photos": [
-        "photos/2026-01-29/1.jpg"
-      ]
-    }
+  "date": "2026-01-28",
+  "location": "North wall – Bench 7",
+  "photos": [
+    "photos/2026-01-28/1.jpg",
+    "photos/2026-01-28/2.jpg"
   ]
 }
