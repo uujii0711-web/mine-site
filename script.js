@@ -1,3 +1,15 @@
+function openLocation() {
+  fetch("data/location1.json")
+    .then(response => {
+      if (!response.ok) throw new Error("JSON уншигдсангүй");
+      return response.json();
+    })
+    .then(data => showPopup(data))
+    .catch(err => {
+      alert("Өдрийн мэдээлэл ачаалагдсангүй");
+      console.error(err);
+    });
+}
 // Map zoom & pan
 let map=document.getElementById("mine-map"), mapContainer=document.getElementById("map-container");
 let scale=1,mapOriginX=0,mapOriginY=0,isDraggingMap=false,startX,startY;
