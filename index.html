@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geotechnical Inspection</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geotechnical Inspection</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="map-container">
-  <img src="img/mine.jpg" class="mine-map">
-  
-  <!-- GANTS PIN -->
-  <div class="pin" style="top:40%; left:55%;" onclick="openLocation()"></div>
+<div id="map-container">
+  <img src="img/mine.jpg" id="mine-map">
 </div>
 
 <!-- POPUP -->
@@ -24,9 +21,16 @@
   <div id="popup-body"></div>
 </div>
 
-<!-- Image modal -->
+<!-- Image modal with annotation -->
 <div id="img-modal" class="img-modal">
-  <img id="modal-img" src="">
+  <div style="position:absolute; top:10px; left:10px; z-index:1002;">
+    <input type="color" id="color-picker" value="#ff0000">
+    <input type="range" id="brush-size" min="1" max="50" value="10">
+    <button id="undo-btn">Undo</button>
+    <button id="redo-btn">Redo</button>
+  </div>
+  <canvas id="modal-canvas"></canvas>
+  <button id="close-modal" style="position:absolute;top:10px;right:10px;z-index:2100;">✕</button>
 </div>
 
 <script src="script.js"></script>

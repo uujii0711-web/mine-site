@@ -5,6 +5,17 @@ html, body {
 #map-container { width:100vw; height:100vh; position:relative; overflow:hidden; cursor:grab; }
 #mine-map { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; transform-origin: top left; }
 
+/* PIN */
+.pin {
+  position:absolute;
+  width:20px; height:20px;
+  background:red; border:2px solid white; border-radius:50%;
+  cursor:pointer; box-shadow:0 0 5px black;
+}
+.pin::after{
+  content:"📍"; position:absolute; top:-25px; left:-10px; font-size:18px;
+}
+
 /* POPUP */
 .popup { position:fixed; bottom:20px; right:20px; width:320px; max-width:90%; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:1000; }
 .hidden { display:none; }
@@ -17,38 +28,10 @@ html, body {
 .img-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:2000; overflow:hidden; }
 #modal-canvas { cursor:grab; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.5); position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(1); }
 .img-modal.visible { display:flex; }
-.img-modal button { position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:24px; cursor:pointer; z-index:2100; }
+
 /* Scrollbar for popup body */
 #popup-body::-webkit-scrollbar { width:8px; }
 #popup-body::-webkit-scrollbar-thumb { background:#ccc; border-radius:4px; }
 #popup-body::-webkit-scrollbar-thumb:hover { background:#999; }
 #popup-body::-webkit-scrollbar-track { background:#f1f1f1; border-radius:4px; }
 #popup-body::-webkit-scrollbar-track:hover { background:#e1e1e1; }
-/* Tooltip for markers */
-.marker-tooltip { position:absolute; background:rgba(0,0,0,0.7); color:white; padding:4px 8px; border-radius:4px; font-size:12px; pointer-events:none; white-space:nowrap; z-index:1500; }
-
-/* Marker styles */
-.marker { position:absolute; width:24px; height:24px; background:url('marker-icon.png') no-repeat center center; background-size:contain; cursor:pointer; transform:translate(-50%, -100%); }
-.marker.selected { width:32px; height:32px; background:url('marker-icon-selected.png') no-repeat center center; background-size:contain; }
-.marker:hover { transform:translate(-50%, -100%) scale(1.2); }
-.marker.selected:hover { transform:translate(-50%, -100%) scale(1.3); }
-.marker.hidden { display:none; }
-/* Zoom controls */
-#zoom-controls { position:fixed; top:20px; left:20px; display:flex; flex-direction:column; z-index:1000; }
-#zoom-controls button { background:#263238; color:white; border:none; padding:10px; margin-bottom:8px; border-radius:8px; font-size:18px; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
-#zoom-controls button:hover { background:#37474F; }
-#zoom-controls button:active { background:#1C262B; }
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .popup { width:90%; bottom:10px; right:5%; }
-  #zoom-controls { top:10px; left:10px; }
-  #zoom-controls button { padding:8px; font-size:16px; }
-}
-/* Image modal zoom limits */
-.img-modal #modal-canvas { max-width:90%; max-height:90%; }
-.img-modal.zoomed-in #modal-canvas { cursor:move; }
-.img-modal.zoomed-out #modal-canvas { cursor:zoom-in; }
-.img-modal.zoomed-in #modal-canvas { transform:translate(-50%,-50%) scale(2); }
-.img-modal.zoomed-out #modal-canvas { transform:translate(-50%,-50%) scale(1); }
-
-
