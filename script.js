@@ -1,4 +1,3 @@
-// JSON-аас мэдээлэл унших (зөвхөн location1.json)
 function openLocation() {
   fetch("data/location1.json")
     .then(response => {
@@ -12,10 +11,8 @@ function openLocation() {
     });
 }
 
-// Popup харуулах
 function showPopup(data) {
   const body = document.getElementById("popup-body");
-
   body.innerHTML = `
     <p><b>Огноо:</b> ${data.date}</p>
     <p><b>Байршил:</b> ${data.location}</p>
@@ -30,7 +27,6 @@ function showPopup(data) {
   });
 }
 
-// Modal нээх
 function openImgModal(src) {
   const modal = document.getElementById("img-modal");
   const modalImg = document.getElementById("modal-img");
@@ -38,12 +34,11 @@ function openImgModal(src) {
   modal.style.display = "flex";
 }
 
-// Modal хаах (зураг дээр дарвал хаагдах)
+// Modal дээр дарвал хаагдах
 document.getElementById("img-modal").onclick = function() {
   this.style.display = "none";
 }
 
-// Popup хаах
 function closePopup() {
   document.getElementById("popup").classList.add("hidden");
 }
