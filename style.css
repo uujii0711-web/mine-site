@@ -29,7 +29,7 @@ html, body {
   border: 3px solid white;
   cursor: pointer;
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  z-index: 10; /* Зурагны дээр гарч ирэх */
+  z-index: 10;
 }
 
 .pin::after {
@@ -75,10 +75,11 @@ html, body {
   cursor: pointer;
 }
 
+/* Mobile-д vertical scroll */
 #popup-body {
   padding: 10px;
-  overflow-x: auto; /* mobile swipe */
-  white-space: nowrap;
+  overflow-y: auto; /* зөвхөн дээш доош гүйлгэх */
+  max-height: 60vh; /* popup-ыг хэт том болгохгүй */
 }
 
 #popup-body img {
@@ -87,7 +88,7 @@ html, body {
   margin-top: 8px;
   border-radius: 8px;
   cursor: pointer;
-  display: inline-block; /* mobile swipe-д зориулсан */
+  display: block;
 }
 
 /* Image modal */
@@ -112,7 +113,7 @@ html, body {
   cursor: zoom-out;
 }
 
-/* Desktop zoom button */
+/* Desktop-д zoom товч */
 .zoom-btn {
   position: absolute;
   top: 5px;
@@ -124,7 +125,21 @@ html, body {
   border-radius: 6px;
   cursor: pointer;
   z-index: 10;
+  font-size: 14px;
 }
 .zoom-btn:hover {
   background: rgba(0,0,0,0.8);
+}
+.zoomed {
+  transform: scale(2);
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .popup {
+    width: 90%;
+    bottom: 10px;
+    right: 5%;
+  }
 }

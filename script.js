@@ -1,4 +1,3 @@
-// JSON-аас мэдээлэл унших (зөвхөн location1.json)
 function openLocation() {
   fetch("data/location1.json")
     .then(response => {
@@ -12,14 +11,13 @@ function openLocation() {
     });
 }
 
-// Popup харуулах
 function showPopup(data) {
   const body = document.getElementById("popup-body");
   body.innerHTML = `
     <p><b>Огноо:</b> ${data.date}</p>
     <p><b>Байршил:</b> ${data.location}</p>
     ${data.photos.map(p => `
-      <div style="position:relative; display:inline-block; margin-right:8px;">
+      <div style="position:relative; display:block; margin-bottom:8px;">
         <img src="${p}" class="popup-photo">
         ${!isTouchDevice() ? '<button class="zoom-btn">Zoom</button>' : ''}
       </div>
@@ -33,7 +31,7 @@ function showPopup(data) {
     img.onclick = () => openImgModal(img.src);
   });
 
-  // Zoom button desktop-д л идэвхтэй
+  // Zoom button desktop-д идэвхтэй
   document.querySelectorAll('.zoom-btn').forEach(btn => {
     btn.onclick = (e) => {
       const img = e.target.previousElementSibling;
