@@ -11,11 +11,18 @@
 <div class="map-container">
   <img src="img/mine.jpg" class="mine-map">
 
-  <!-- Pin -->
+  <!-- PIN -->
   <div class="pin" style="top:40%; left:55%;" onclick="openLocation()"></div>
 </div>
 
-<div id="panel" class="panel hidden"></div>
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-header">
+    <span>Өдрийн үзлэг</span>
+    <button onclick="closePopup()">✕</button>
+  </div>
+  <div id="popup-body"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
