@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.map-container {
+  position: relative;
+}
+
+.mine-map {
+  width: 100%;
+}
+
+.pin {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.panel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 60%;
+  background: white;
+  border-top: 2px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.date {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
