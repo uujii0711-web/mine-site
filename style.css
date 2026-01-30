@@ -9,7 +9,7 @@ html, body {
 .pin {
   position:absolute;
   width:20px; height:20px;
-  background:red; border:2px solid white; border-radius:50%;
+  background:rgb(0, 255, 85); border:2px solid white; border-radius:50%;
   cursor:pointer; box-shadow:0 0 5px black;
 }
 .pin::after{
